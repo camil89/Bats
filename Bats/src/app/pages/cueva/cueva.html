@@ -1,0 +1,112 @@
+<div class="p-5 mb-4 text-white rounded-3 shadow border border-secondary text-center" 
+     style="background: linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)), url('https://img.freepik.com/fotos-premium/uma-pintura-de-morcegos-voando-no-ceu-noturno_81048-26337.jpg?w=740'); background-size: cover; background-position: center;">
+  <div class="container-fluid py-5">
+    <h1 class="display-4 fw-bold text-warning">🦇 Santuario de Murcielagos</h1>
+    <p class="col-md-10 fs-5 mx-auto text-light opacity-85">
+      Bienvenidos a nuestro centro de conservación y divulgación. Guardianes de los cielos nocturnos y protectores de los ecosistemas locales.
+    </p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-4">
+      <a routerLink="/productos" class="btn btn-warning btn-lg px-4 gap-3 fw-bold">Explorar Especies (12)</a>
+      <a routerLink="/acercade" class="btn btn-outline-light btn-lg px-4">Conocer la Misión</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="row g-4 my-3 text-center">
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm border-0 bg-light p-3">
+      <div class="card-body">
+        <h1 class="text-primary mb-3">🌺</h1>
+        <h5 class="card-title fw-bold">Polinizadores Clave</h5>
+        <p class="card-text text-muted">
+          Muchas plantas, como agaves y bananas, dependen exclusivamente de los murciélagos para reproducirse.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm border-0 bg-light p-3">
+      <div class="card-body">
+        <h1 class="text-success mb-3">🦟</h1>
+        <h5 class="card-title fw-bold">Control Biológico</h5>
+        <p class="card-text text-muted">
+          Un solo murciélago insectívoro puede consumir miles de insectos plaga y mosquitos en una sola noche.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm border-0 bg-light p-3">
+      <div class="card-body">
+        <h1 class="text-warning mb-3">📡</h1>
+        <h5 class="card-title fw-bold">Ecolocalización</h5>
+        <p class="card-text text-muted">
+          Poseen un súper radar biológico que les permite navegar e identificar presas en absoluta oscuridad.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="accordion shadow-sm" id="accordionMitos">
+  
+  
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button fw-bold" [class.collapsed]="itemAbierto !== 1" type="button" (click)="toggleItem(1)">
+        ❌ Mito 1: ¿Los murciélagos son ciegos?
+      </button>
+    </h2>
+    @if (itemAbierto === 1) {
+      <div class="accordion-body text-secondary">
+        <strong>Realidad:</strong> ¡Falso totalmente! Los murciélagos tienen ojos perfectamente funcionales y ven muy bien. Además, muchas especies utilizan un sistema de radar biológico llamado <em>ecolocalización</em> para cazar en completa oscuridad.
+      </div>
+    }
+  </div>
+
+  
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button fw-bold" [class.collapsed]="itemAbierto !== 2" type="button" (click)="toggleItem(2)">
+        ❌ Mito 2: ¿Todos los murciélagos se alimentan de sangre?
+      </button>
+    </h2>
+    @if (itemAbierto === 2) {
+      <div class="accordion-body text-secondary">
+        <strong>Realidad:</strong> De las más de 1,400 especies que existen, <strong>solo tres</strong> se alimentan de sangre de animales. La inmensa mayoría son excelentes polinizadores o devoradores de insectos.
+      </div>
+    }
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button fw-bold" [class.collapsed]="itemAbierto !== 3" type="button" (click)="toggleItem(3)">
+        👻 Leyenda Urbana: ¿Se enredan en el cabello de las personas?
+      </button>
+    </h2>
+    @if (itemAbierto === 3) {
+      <div class="accordion-body text-secondary">
+        <strong>La verdad:</strong> Es un mito antiguo. Vuelan rápido persiguiendo los mosquitos e insectos que nos rodean en las noches. Sus sistemas de ecolocalización les permiten esquivar cualquier obstáculo fácilmente.
+      </div>
+    }
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button fw-bold" [class.collapsed]="itemAbierto !== 4" type="button" (click)="toggleItem(4)">
+        🦇 Curiosidad / Leyenda Pop: El caso especial de Batman
+      </button>
+    </h2>
+    @if (itemAbierto === 4) {
+      <div class="accordion-body text-secondary">
+        <strong>Realidad de Gotham:</strong> Bruce Wayne eligió a los murciélagos para infundir temor en los criminales. En nuestro santuario protegemos tanto a la fauna real como al superhéroe de nuestra novena especie. 😉
+      </div>
+    }
+  </div>
+
+</div>

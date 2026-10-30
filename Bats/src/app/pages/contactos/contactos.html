@@ -1,0 +1,68 @@
+<div class="p-5 rounded-4 shadow-lg text-white my-4 border border-secondary position-relative overflow-hidden"
+     style="background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.90)), url('https://img.magnific.com/vector-gratis/diseno-fondo-feliz-halloween_52683-44523.jpg?semt=ais_hybrid&w=740&q=80'); background-size: cover; background-position: center;">
+  
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      
+      <div class="text-center mb-4">
+        <h2 class="fw-bold text-warning display-6">📬 Contactate con el Refugio</h2>
+        <p class="text-light opacity-75">
+          ¿Encontraste un murciélago herido, tenés dudas sobre su comportamiento o querés coordinar una visita educativa? ¡Escribinos!
+        </p>
+      </div>
+
+      <div class="card bg-white text-dark shadow-lg border-0 p-4 rounded-3">
+        @if (enviado) {
+          <div class="alert alert-success text-center py-4">
+            <h4 class="fw-bold">¡Muchas gracias, {{ nombre }}! 🦇</h4>
+            <p class="mb-0">Tu mensaje ha sido enviado con éxito. Nos pondremos en contacto a la brevedad.</p>
+          </div>
+        } @else {
+          <form (ngSubmit)="enviarMensaje()">
+            <div class="mb-3">
+              <label class="form-label fw-bold text-secondary">Nombre Completo</label>
+              <input type="text" class="form-control" [(ngModel)]="nombre" name="nombre" placeholder="Ej: Camila Gómez" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-bold text-secondary">Correo Electrónico</label>
+              <input type="email" class="form-control" [(ngModel)]="email" name="email" placeholder="ejemplo@email.com" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-bold text-secondary">Mensaje o Motivo de Consulta</label>
+              <textarea class="form-control" rows="4" [(ngModel)]="mensaje" name="mensaje" placeholder="Describinos tu consulta o situación..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-warning text-dark fw-bold w-100 py-2 shadow-sm">
+              🚀 Enviar Mensaje al Santuario
+            </button>
+          </form>
+        }
+      </div>
+
+      <div class="row text-center mt-4 text-light g-3">
+        <div class="col-md-4">
+          <div class="p-2 bg-dark bg-opacity-50 rounded border border-secondary">
+            <small class="text-warning fw-bold">📍 Ubicación</small>
+            <p class="mb-0 small text-light">Patagonia, Argentina</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-2 bg-dark bg-opacity-50 rounded border border-secondary">
+            <small class="text-warning fw-bold">📞 Urgencias Rescate</small>
+            <p class="mb-0 small text-light">Disponible 24/7</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-2 bg-dark bg-opacity-50 rounded border border-secondary">
+            <small class="text-warning fw-bold">✉️ Email Oficial</small>
+            <p class="mb-0 small text-light">contacto@sanctuarybats.org</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

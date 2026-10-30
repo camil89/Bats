@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
+  <div>
+    <h2 class="fw-bold mb-1">Catálogo de Especies</h2>
+    <p class="text-muted mb-0">Explora las 12 especies registradas en nuestro centro de conservación.</p>
+  </div>
+  <div class="bg-dark text-white px-3 py-2 rounded-pill shadow-sm">
+    ⭐ Favoritos marcados: <span class="badge bg-warning text-dark fs-6 ms-1">{{ favoritosCount }}</span>
+  </div>
+</div>
+
+@if (listaMurcielagos.length > 0) {
+  <div class="row g-4">
+    @for (item of listaMurcielagos; track item.id) {
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-producto-card 
+          [item]="item" 
+          (toggleFav)="actualizarFavorito($event)">
+        </app-producto-card>
+      </div>
+    }
+  </div>
+} @else {
+  <div class="alert alert-warning text-center p-4 rounded-3" role="alert">
+    <h4>🦇 No hay especies en exhibición</h4>
+    <p class="mb-0">En este momento todos nuestros huéspedes fueron reinsertados en su hábitat natural.</p>
+  </div>
+}
